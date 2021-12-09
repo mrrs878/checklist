@@ -1,0 +1,28 @@
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-delete {
+  margin-left: 10px;
+}
+
+.task-resolved {
+  text-decoration: line-through;
+}
+
+.task-action-icon {
+  width: 16px;
+}
+
+.task-actions-container .list-group-item {
+  padding: 0.3rem 0.5rem;
+}
+
+.task-item .custom-checkbox {
+  width: 60%;
+}
+.task-item .custom-control-label {
+  width: 100%
+}

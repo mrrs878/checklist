@@ -1,0 +1,64 @@
+<!--
+ * @Author: mrrs878@foxmail.com
+ * @Date: 2021-12-07 19:17:57
+ * @LastEditors: mrrs878@foxmail.com
+ * @LastEditTime: 2021-12-08 22:05:29
+ * @FilePath: \checklist\html\popup.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist</title>
+  <link rel="stylesheet" href="../lib/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/popup.css">
+  <script src="../lib/jquery.slim.min.js"></script>
+  <script src="../lib/bootstrap.bundle.min.js"></script>
+  <script src="../js/popup.js" defer></script>
+</head>
+
+<body>
+  <div class="card" style="width: 24rem;">
+    <div class="card-body d-flex justify-content-between">
+      <h5 class="card-title">Checklist</h5>
+      <img class="task-action-icon" src="../assets/refresh.svg" alt="" srcset="">
+    </div>
+    <ul class="list-group list-group-flush" id="taskContainer">
+    </ul>
+    <div class="card-body">
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control" id="addTaskTitleInput" placeholder="请输入标题" aria-label="请输入标题"
+          aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" id="addTaskBtn">添加待办</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">编辑待办</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <textarea type="text" class="form-control form-control-sm" id="editTaskTitleInput" placeholder="请输入标题" aria-label="请输入标题"
+              aria-describedby="button-addon2"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary btn-sm" id="editTaskModalSubmitBtn">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
