@@ -1,3 +1,9 @@
+.card {
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
 .list-group-item {
   display: flex;
   align-items: center;
@@ -25,4 +31,12 @@
 }
 .task-item .custom-control-label {
   width: 100%
+}
+
+.input-group-text {
+  border: none;
+  background: transparent;
+}
+.task-title-input {
+  border: none;
 }
