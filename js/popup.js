@@ -2,7 +2,7 @@
  * @Author: mrrs878@foxmail.com
  * @Date: 2021-12-07 20:50:34
  * @LastEditors: mrrs878@foxmail.com
- * @LastEditTime: 2022-07-20 19:29:15
+ * @LastEditTime: 2022-07-20 19:43:01
  * @FilePath: \checklist\js\popup.js
  */
 
@@ -133,6 +133,7 @@ function setBadge(tasks) {
 async function renderTasks() {
   $(selectors.taskContainer).empty();
   const tasks = await getTasks();
+  setBadge(tasks);
   if (tasks.length === 0) {
     $(selectors.taskContainer).append(`
       <br />
@@ -171,8 +172,6 @@ async function renderTasks() {
       await renderTasks();
     });
   })
-
-  setBadge(tasks);
 }
 
 window.addEventListener('load', async () => {
