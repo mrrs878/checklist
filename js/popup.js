@@ -2,7 +2,7 @@
  * @Author: mrrs878@foxmail.com
  * @Date: 2021-12-07 20:50:34
  * @LastEditors: mrrs878@foxmail.com
- * @LastEditTime: 2022-07-20 18:01:06
+ * @LastEditTime: 2022-07-20 19:29:15
  * @FilePath: \checklist\js\popup.js
  */
 
@@ -179,15 +179,25 @@ window.addEventListener('load', async () => {
   await renderTasks();
 
   $(selectors.addTaskBtn).on('click', async () => {
-    const taskTitle = $(selectors.addTaskTitleInput).prop('value');
-    const newTask = {
-      title: taskTitle,
-      state: TaskState.pending,
-    }
-    await addTask(newTask);
+    const form = document.querySelector('.needs-validation');
+    form.addEventListener('submit', async (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      } else {
+        const taskTitle = $(selectors.addTaskTitleInput).prop('value');
+        const newTask = {
+          title: taskTitle,
+          state: TaskState.pending,
+        }
+        await addTask(newTask);
 
-    $(selectors.addTaskTitleInput).prop('value', '');
-    renderTasks();
+        $(selectors.addTaskTitleInput).prop('value', '');
+        renderTasks();
+      }
+
+      form.classList.add('was-validated')
+    }, false);
   });
 
   $(selectors.editTaskModal).on('show.bs.modal', async function (event) {
